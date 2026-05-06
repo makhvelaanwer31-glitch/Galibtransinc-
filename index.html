@@ -61,63 +61,100 @@
     .why-card .icon { font-size:2rem; margin-bottom:.8rem; }
     .why-card h4 { color:var(--gold); font-family:'Playfair Display',serif; font-size:1.05rem; margin-bottom:.5rem; }
     .why-card p { color:#64748b; font-size:.88rem; line-height:1.7; }
-    #contact { background:var(--white); }
-    .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:3.5rem; align-items:start; margin-top:2.5rem; }
-    .contact-info h3 { font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:1.2rem; }
-    .info-item { display:flex; gap:1rem; align-items:flex-start; margin-bottom:1.3rem; }
-    .info-icon { width:42px; height:42px; background:var(--cream); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
-    .info-item strong { display:block; font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); margin-bottom:.2rem; }
-    .info-item p { color:var(--gray); font-size:.93rem; line-height:1.55; }
-    .info-item a { color:var(--navy); text-decoration:none; }
-    .form-wrap { background:var(--cream); border-radius:12px; padding:2.2rem; }
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-    .form-group { display:flex; flex-direction:column; gap:.35rem; margin-bottom:1.1rem; }
-    label { font-size:.8rem; font-weight:600; color:var(--gray); letter-spacing:.05em; text-transform:uppercase; }
-    input,textarea,select { background:var(--white); border:1.5px solid var(--light); color:var(--navy); padding:.75rem 1rem; border-radius:6px; font-family:inherit; font-size:.95rem; transition:border-color .2s; width:100%; }
-    input:focus,textarea:focus,select:focus { outline:none; border-color:var(--gold); }
-    textarea { resize:vertical; min-height:110px; }
-    .consent-box { background:#fff8e6; border:1px solid rgba(201,168,76,.4); border-radius:8px; padding:1rem 1.2rem; margin-bottom:1.2rem; }
-    .consent-box p { font-size:.8rem; color:var(--gray); line-height:1.65; }
-    .consent-box a { color:var(--gold); text-decoration:underline; }
-    .checkbox-row { display:flex; align-items:flex-start; gap:.6rem; margin-bottom:.5rem; }
-    .checkbox-row input[type=checkbox] { width:16px; height:16px; min-width:16px; margin-top:3px; accent-color:var(--gold); padding:0; border:none; }
-    .checkbox-row span { font-size:.8rem; color:var(--gray); line-height:1.6; }
-    #privacy { background:var(--cream); }
-    .policy-box { background:var(--white); border:1px solid var(--light); border-radius:12px; padding:2.8rem; max-width:850px; }
-    .policy-box h3 { font-family:'Playfair Display',serif; font-size:1.15rem; margin:1.8rem 0 .6rem; color:var(--navy); border-bottom:1px solid var(--light); padding-bottom:.5rem; }
-    .policy-box h3:first-child { margin-top:0; }
-    .policy-box p,.policy-box li { color:var(--gray); font-size:.93rem; line-height:1.85; margin-bottom:.5rem; }
-    .policy-box ul { padding-left:1.4rem; margin-bottom:.8rem; }
-    .policy-box strong { color:var(--navy); }
-    .highlight-box { background:#fff8e6; border-left:4px solid var(--gold); padding:1.1rem 1.4rem; border-radius:0 8px 8px 0; margin:1.2rem 0; }
-    .highlight-box p { font-style:italic; font-weight:600; color:var(--navy)!important; font-size:1rem!important; margin:0!important; }
-    footer { background:var(--navy); color:#475569; padding:2.5rem 2rem 1.8rem; text-align:center; }
-    .footer-top { display:flex; justify-content:center; align-items:center; gap:.8rem; margin-bottom:1.2rem; }
-    .footer-logo { font-family:'Playfair Display',serif; color:var(--white); font-size:1.2rem; }
-    .footer-links { display:flex; gap:1.8rem; justify-content:center; margin-bottom:1rem; flex-wrap:wrap; }
-    .footer-links a { color:#64748b; text-decoration:none; font-size:.88rem; }
-    .footer-links a.privacy { color:var(--gold); text-decoration:underline; }
-    .footer-sms { font-size:.78rem; color:#475569; margin-top:.6rem; font-style:italic; }
-    .footer-copy { font-size:.8rem; color:#334155; margin-top:1rem; }
-    #toast { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(120px); background:#22c55e; color:white; padding:.9rem 2rem; border-radius:6px; font-weight:600; transition:transform .35s; z-index:999; pointer-events:none; }
-    #toast.show { transform:translateX(-50%) translateY(0); }
-    @media(max-width:768px) { nav ul{display:none;} .about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem;} .form-row{grid-template-columns:1fr;} .stat{padding:1rem 1.5rem;} section{padding:3.5rem 1.2rem;} nav{padding:1rem 1.2rem;} .policy-box{padding:1.5rem;} }
-  </style>
-</head>
-<body>
-<nav>
-  <div class="logo-wrap">
-    <div class="logo-icon">🚛</div>
-    <div class="logo-text">Galib Trans Inc<span>Transportation Services</span></div>
+    #<!-- Find your existing Phone Number field -->
+<input type="tel" placeholder="Phone Number" name="phone">
+
+<!-- ADD THIS BLOCK right after the phone field -->
+<div class="sms-consent" style="margin: 10px 0; padding: 10px; 
+     background:#f9f9f9; border-radius:6px; font-size:13px;">
+  <label style="display:flex; align-items:flex-start; gap:10px; 
+         cursor:pointer;">
+    <input type="checkbox" 
+           name="sms_consent" 
+           id="sms_consent"
+           style="margin-top:3px; min-width:16px; height:16px;"
+           required>
+    <span>
+      I agree to receive SMS text messages from 
+      <strong>Galib Trans Inc</strong> at the phone number provided. 
+      Messages may include <em>shipment updates, quotes, 
+      scheduling confirmations, and service information</em>. 
+      Message frequency varies. Message &amp; data rates may apply. 
+      Reply <strong>STOP</strong> to unsubscribe at any time. 
+      Reply <strong>HELP</strong> for help. 
+      View our <a href="#privacy" style="color:#e67e22;">
+      Privacy Policy</a>.
+    </span>
+  </label>
+</div>
+<!-- SMS consent is separate — do NOT combine with other terms -->
+
+    #<section id="privacy" style="padding:60px 20px; background:#f4f4f4;">
+  <div style="max-width:800px; margin:0 auto; font-family:sans-serif; 
+              line-height:1.8; color:#333;">
+    
+    <h2 style="color:#2c3e50; border-bottom:3px solid #e67e22; 
+               padding-bottom:10px;">Privacy Policy</h2>
+    <p><strong>Last Updated:</strong> May 2026</p>
+    <p>Galib Trans Inc ("we," "us," or "our") is committed to protecting 
+    your privacy. This policy explains how we collect, use, and protect 
+    your personal information.</p>
+
+    <h3 style="color:#e67e22;">1. Information We Collect</h3>
+    <p>We collect information you provide directly, including your name, 
+    email address, phone number, and service inquiries submitted through 
+    our contact form.</p>
+
+    <h3 style="color:#e67e22;">2. How We Use Your Information</h3>
+    <p>We use your information to respond to inquiries, provide quotes, 
+    confirm appointments, and send service-related communications 
+    including SMS text messages if you have opted in.</p>
+
+    <h3 style="color:#e67e22;">3. SMS Messaging Policy</h3>
+    <p>By checking the SMS consent checkbox on our contact form, you 
+    expressly consent to receive SMS text messages from Galib Trans Inc. 
+    These messages may include:</p>
+    <ul>
+      <li>Shipment status updates and delivery confirmations</li>
+      <li>Quote responses and pricing information</li>
+      <li>Scheduling and appointment reminders</li>
+      <li>General service and operational information</li>
+    </ul>
+    <p><strong>Message frequency may vary.</strong> 
+    Message and data rates may apply.</p>
+    <p>To opt out at any time, reply <strong>STOP</strong> to any 
+    SMS message. For assistance, reply <strong>HELP</strong> or 
+    contact us at Preet.virk2323@yahoo.com</p>
+
+    <h3 style="color:#e67e22;">4. No Sharing of SMS Consent Data</h3>
+    <p style="background:#fff3cd; padding:12px; border-left:4px solid 
+    #e67e22; border-radius:4px;">
+    <strong>Important:</strong> We do not sell, rent, share, or 
+    disclose your phone number or SMS consent to any third party 
+    for their marketing purposes. SMS opt-in data and phone numbers 
+    collected for SMS messaging will not be shared with third parties 
+    or affiliates for marketing purposes under any circumstances.
+    </p>
+
+    <h3 style="color:#e67e22;">5. Information Sharing</h3>
+    <p>We do not sell your personal information. We may share 
+    information with service providers who assist in our operations 
+    (e.g., communication platforms), strictly for providing our 
+    services to you.</p>
+
+    <h3 style="color:#e67e22;">6. Data Security</h3>
+    <p>We implement appropriate security measures to protect your 
+    personal information from unauthorized access or disclosure.</p>
+
+    <h3 style="color:#e67e22;">7. Contact Us</h3>
+    <p>For privacy questions or to request data deletion:<br>
+    📞 (661) 554-4007<br>
+    ✉ Preet.virk2323@yahoo.com<br>
+    🌐 https://makhvelaanwer31-glitch.github.io/Galibtransinc-</p>
+
   </div>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#privacy">Privacy Policy</a></li>
-    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
-  </ul>
+</section>
+
 </nav>
 <div id="home">
   <div class="hero">
